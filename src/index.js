@@ -1,4 +1,5 @@
 require('./models/User');
+require('./models/Track');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,7 +11,7 @@ app.use(bodyParser.json());
 app.use(authRoutes);
 
 const mongoUri =
-  'mongodb+srv://<USERNAME>:<PASSWORD>.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://<username>:<password>@cluster0.gupgkrx.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(mongoUri);
 mongoose.connection.on('connected', () => {
   console.log('connected to mongo instance');
